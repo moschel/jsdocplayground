@@ -34,6 +34,9 @@ public class Run {
 		
 		// the base directory, assumed to contain main.js
 		String jarDir = new File(jarPath).getParent();
+		if(jarDir.equals("\\") || jarDir.equals("/")){
+			jarDir = ".";
+		}
 		String mainPath = jarDir + "/main.js";
         
         // Rhino eats the first arg (the path to the script file it is running)
